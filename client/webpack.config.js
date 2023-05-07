@@ -13,6 +13,7 @@ module.exports = () => {
     output: {
       filename: '[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      assetModuleFilename: 'assets/icons/[name][hash][ext]',
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -21,7 +22,8 @@ module.exports = () => {
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'service-worker.js',
+        swDest: 'src-sw.js',
+        include: [/\.html$/, /\.js$/, /\.css$/, /\.png$/],
       }),
       new WebpackPwaManifest({
         name: 'JATE',
@@ -30,6 +32,8 @@ module.exports = () => {
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',
+        publicPath: '/',
+        fingerprints: true,
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -44,6 +48,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.m?js$/,

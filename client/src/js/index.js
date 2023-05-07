@@ -2,6 +2,10 @@ import { Workbox } from 'workbox-window';
 import Editor from './editor';
 import './database';
 import '../css/style.css';
+import Icon from '../images/logo.png';
+
+const iconImg = document.getElementById('icon');
+iconImg.src = Icon;
 
 const main = document.querySelector('#main');
 main.innerHTML = '';
