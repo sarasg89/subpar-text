@@ -56,6 +56,8 @@ node index.js
 
 [Starter code](https://github.com/coding-boot-camp/cautious-meme)
 
+This YouTube [tutorial](https://www.youtube.com/watch?v=IZGNcSuwBZs&ab_channel=TraversyMedia) was helpful in understanding how to use Webpack to bundle the application.
+
 NPM packages used:  
 
 ## License
