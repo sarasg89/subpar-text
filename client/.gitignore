@@ -34,6 +34,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+../server/node_modules/
+../node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -62,6 +64,8 @@ typings/
 
 # lock files
 package-lock.json
+../package-lock.json
+../server/package-lock.json
 yarn.lock
 
 .DS_Store

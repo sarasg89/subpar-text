@@ -4,12 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start:dev": "",
-    "start": "",
-    "server": "",
-    "build": "",
-    "install": "",
-    "client": ""
+    "start:dev": "cd client && npm run dev",
+    "start": "cd server && npm run start",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install && cd ../server && npm install"
   },
   "keywords": [],
   "author": "Sara Seoane Garcia",
