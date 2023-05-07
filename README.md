@@ -4,12 +4,13 @@
 
 ## Description
 
-I have built a text editor that runs in the browser as a single-page application that meets the PWA criteria.
+I have built a text editor that runs in the browser as a single-page application that also runs offline and can be downloaded as a desktop app. For the database, I used a package called [idb](https://www.npmjs.com/package/idb), which is a tiny library that mostly mirrors the IndexedDB API. I also used [Webpack](https://webpack.js.org/) to bundle the application.
 
 ## Table of contents
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Deployed application](#deployed-application)
 - [Screenshots](#screenshots)
 - [Credits](#credits)
 - [License](#license)
@@ -44,13 +45,41 @@ Open your terminal and navigate to the directory
 cd ./subpar-text
 ```
 
-Run node to initialize the application
+Run npm start to initialize the application. This command will build the webpack bundle and start the server.
 
 ```bash
-node index.js
+npm start
 ```
 
+Open your browser and navigate to [http://localhost:3001/](http://localhost:3001/) to view the application.
+
+You can enter content into the text editor and it will be saved automatically when you click off of the DOM window. If you close the text editor and reopen it again, the content will still be there. You can also download the application as a desktop app by clicking on the INSTALL icon in the top left corner of the text editor.
+
+The content in the text editor is retrieved from the database even when you are offline. If you are offline and you enter content into the text editor, it will be saved to the database. When you are back online, the content will be retrieved from the database and displayed in the text editor.
+
+## Deployed application
+
+This application has been deployed to Heroku. You can view it here [https://damp-brook-42422.herokuapp.com/](https://damp-brook-42422.herokuapp.com/).
+
 ### Screenshots
+
+Text editor:
+![Screenshot of text editor](./assets/screenshots/main.png)
+
+Install prompt:
+![Screenshot of install prompt](./assets/screenshots/install.png)
+
+Desktop app:
+![Screenshot of desktop app](./assets/screenshots/PWA.png)
+
+Manifest:
+![Screenshot of the manifest](./assets/screenshots/manifest.png)
+
+Service worker:
+![Screenshot of the service worker](./assets/screenshots/service-worker.png)
+
+Database:
+![Screenshot of the database](./assets/screenshots/database.png)
 
 ## Credits
 
@@ -58,7 +87,7 @@ node index.js
 
 This YouTube [tutorial](https://www.youtube.com/watch?v=IZGNcSuwBZs&ab_channel=TraversyMedia) was helpful in understanding how to use Webpack to bundle the application.
 
-NPM packages used:  
+This Stackoverflow [thread](https://stackoverflow.com/questions/71278057/heroku-deploy-in-dev-or-production) was helpful in understanding how to deploy to Heroku.
 
 ## License
 
