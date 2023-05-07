@@ -6,6 +6,7 @@
   "scripts": {
     "start:dev": "cd client && npm run dev",
     "start:prod": "cd client && npm run build && cd ../server && npm run start",
+    "heroku-prebuild": "npm install --dev",
     "start": "npm run start:prod",
     "build": "cd client && npm run build",
     "install": "cd client && npm install && cd ../server && npm install"
