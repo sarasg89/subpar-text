@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "cd client && npm run dev",
-    "start": "cd server && npm run start",
+    "start:prod": "cd client && npm run build && cd ../server && npm run start",
+    "start": "npm run start:prod",
     "build": "cd client && npm run build",
     "install": "cd client && npm install && cd ../server && npm install"
   },
