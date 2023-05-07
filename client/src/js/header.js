@@ -8,5 +8,6 @@ const header = `
 just another text editor
 */                          
 `;
+console.log("here");
 
 export { header };
